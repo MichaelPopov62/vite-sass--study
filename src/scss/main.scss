@@ -1,3 +1,6 @@
-@use "reset";
-@use "base/base";
-@use "components/badge"
+ @use "reset";
+ @use "base/base";
+ @use "components/badge";
+ @use "utils/mixin";
+ @use "utils/styles-forwarded";
+ @use "utils/veriables";

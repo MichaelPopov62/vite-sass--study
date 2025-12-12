@@ -1,21 +1,21 @@
+//підключення модулів через дерективу @use
+// @use "../utils/mixin";
+// @use "../utils/veriables" as v;
+
+//підключення через дерективу @forward для множиних імпортов. Збирає всі імпорти
+@use "../utils/styles-forwarded" as fwrd ;
+
 .badge{
-  display: inline-block;
-  min-width: 96px;
-  padding: 4px 8px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0.07px;
-  text-align: center;
-  color: #ffffff;
-  border-radius: 20px;
-}
+  @include fwrd.badge-base();//підключення mixin може бути як через @use так і через @forward для скорочення запису викоритовуємо as v(veribles) якщо @forward тоді as fwrd
+  
+  // color:v.$badge-c1;
+ }
 .badge-completed{
-  background-color: #a461db;
+  background-color: fwrd.$completed;// значення колярів заменяємо на назви з файлу variables.scss
 }
 .badge-ended{
-  background-color: #fc5a5a;
+  background-color:fwrd.$ended;
 }
 .badge-active{
-  background-color: #82c43c;
+  background-color:fwrd.$active;
 }
